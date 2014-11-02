@@ -19,23 +19,28 @@
 		Data consists of two numbers, m and n. The digits of each prime must add up to m and 
 		n must be placed in the top-left position. In the example, m = 11 and n = 1.
 
-		You may use the same prime more than once in the grid. You must output all possible solutions.
+		You may use the same prime more than once in the grid. 
+		You must output all possible solutions.
 
 
 
 	Solution:
 
-	Given that all 5 digit prime numbers lay between 10000 and 99999, a function is used to generate all 
-	the 5 digit numbers which adds up to some given prime number m. While each valid prime (primes which digits adds up to
-	the given prime) is generated a table of indexes keeps track of the positions of all unique leading digits as well as 
-	a matrix to store the digits of each prime, e.g. 13331, primeArray{1, 3, 3, 3, 1}.
+	Given that all 5 digit prime numbers lay between 10000 and 99999, a function is used 
+	to generate all the 5 digit numbers which adds up to some given prime number m. 
+	While each valid prime (primes which digits adds up to the given prime) is 
+	generated a table of indexes keeps track of the positions of all unique leading 
+	digits as well as a matrix to store the digits of each prime, 
+	e.g. 13331, primeArray{1, 3, 3, 3, 1}.
 
 	We will fill and check the square systematically in twelve steps. 
-	Each step concerns a sequence of five digits. Filling each row, column, and diagonal.During this process some 
-	positions in the square have been filled with a digit and others not yet. Whenever a new row/column/diagonal 
-	is considered, we fill it with all possible candidate primes from the table (one by one). Of course, such a prime has 
-	to match the digits that are already in the square. When all rows/ columns and diagonals 
-	have been filled with primes we have a solution. 
+	Each step concerns a sequence of five digits. Filling each row, column, 
+	and diagonal.During this process some positions in the square have been filled 
+	with a digit and others not yet. Whenever a new row/column/diagonal is 
+	considered, we fill it with all possible candidate primes from the 
+	table (one by one). Of course, such a prime has to match the digits that 
+	are already in the square. When all rows/ columns and diagonals have been 
+	filled with primes we have a solution. 
 
 	
 	The digits are filled in the following order:
